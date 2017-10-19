@@ -1,0 +1,27 @@
+{
+  "name": "owner",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "facilities": {
+      "type": "hasMany",
+      "model": "facility",
+      "foreignKey": "owner_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

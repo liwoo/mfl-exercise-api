@@ -1,0 +1,38 @@
+{
+  "name": "district",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "region": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "facilities": {
+      "type": "hasMany",
+      "model": "facility",
+      "foreignKey": "district_id"
+    },
+    "facilityType": {
+      "type": "belongsTo",
+      "model": "facility_type",
+      "foreignKey": "facility_type_id"
+    },
+    "owner": {
+      "type": "belongsTo",
+      "model": "owner",
+      "foreignKey": "owner_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

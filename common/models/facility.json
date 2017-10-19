@@ -1,0 +1,62 @@
+{
+    "name": "facility",
+    "base": "PersistedModel",
+    "idInjection": true,
+    "options": {
+        "validateUpsert": true
+    },
+    "properties": {
+        "name": {
+            "type": "string",
+            "required": true
+        },
+        "email": {
+            "type": "string"
+        },
+        "phone": {
+            "type": "string"
+        },
+        "dho": {
+            "type": "string"
+        },
+        "date_opened": {
+            "type": "date",
+            "required": true
+        },
+        "district_id": {
+            "type": "string",
+            "required": true,
+            "default": "null"
+        },
+        "owner_id": {
+            "type": "string",
+            "required": true,
+            "default": "null"
+        },
+        "facility_type_id": {
+            "type": "string",
+            "required": true,
+            "default": "null"
+        }
+    },
+    "validations": [],
+    "relations": {
+        "district": {
+            "type": "belongsTo",
+            "model": "district",
+            "foreignKey": "district_id"
+        },
+        "owner": {
+            "type": "belongsTo",
+            "model": "owner",
+            "foreignKey": "owner_id"
+        },
+        "facility-type": {
+            "type": "belongsTo",
+            "model": "facility_type",
+            "foreignKey": "facility_type_id"
+        }
+    },
+    "acls": [],
+    "methods": {}
+}
